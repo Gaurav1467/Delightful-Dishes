@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import {BsSearch} from 'react-icons/bs'
 import {fetchData} from "../service"
 import {CiPizza} from 'react-icons/ci'
-import {GiNoodles,GiHamburger,GiCheckMark,GiSandwich} from 'react-icons/gi'
+import {GiNoodles,GiHamburger,GiSandwich} from 'react-icons/gi'
 
 
 
@@ -12,9 +12,7 @@ function RecipeLists(props) {
     const [data,setData] = useState('');
 
     const [active,setActive] = useState('Pizza')
-    const [tabData,setTabData] = useState('')
-    const [tabn, setTabn] = useState("Pizza")
-    const [tabLabel,setTabLabel] = useState([
+    const tabLabel = [
         {
             name: 'Pizza',
             icon:<CiPizza />
@@ -34,7 +32,7 @@ function RecipeLists(props) {
 
             
         },
-    ])
+    ];
 
     const handleClick = (name) => {
         setActive(name);
@@ -54,6 +52,7 @@ function RecipeLists(props) {
             // console.log(response)
             props.setLoader(false)
         })
+        // eslint-disable-next-line
     },[query])
   return (
     <div className='container'>
@@ -74,7 +73,7 @@ function RecipeLists(props) {
                     value={searchedTearm} 
                     type="text" 
                     placeholder='Search you recipe' />
-                <button onClick={()=> (searchrecipe(searchedTearm),props.setLoader(true))}><BsSearch /></button>
+                <button onClick={()=> (searchrecipe(searchedTearm) ,props.setLoader(true))}><BsSearch /></button>
             </div> 
         </div>
         <div className='flexbox'>
