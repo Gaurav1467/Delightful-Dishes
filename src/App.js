@@ -1,4 +1,5 @@
 import './App.scss';
+import Footer from './components/Footer';
 import Header from './components/Header'
 import RecipeLists from './components/RecipeLists'
 import { useState } from 'react';
@@ -12,6 +13,7 @@ function App() {
       {loader && <div className='loader'>
         <div className='spinner'></div>
         </div>}
+      <Footer/>
     </div>
   );
 }
