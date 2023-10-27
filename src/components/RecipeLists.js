@@ -8,7 +8,7 @@ import {GiNoodles,GiHamburger,GiCheckMark,GiSandwich} from 'react-icons/gi'
 
 function RecipeLists(props) {
     const [searchedTearm, setSearchedTearm] = useState('')
-    const [query,setQuery] = useState('')
+    const [query,setQuery] = useState('pizza')
     const [data,setData] = useState('');
 
     const [active,setActive] = useState('Pizza')
